@@ -11,14 +11,8 @@ public class Exercise3b {
    * in the book
    */
   public static int countServings(RecipeBook recipeBook) {
-    int count = 0;
-
-    for(int i = 0; i < recipeBook.getRecipes().size(); i++) {
-      List<Recipe> recipes = recipeBook.getRecipes();
-
-        count += recipes.get(i).servings;
-
-    }
-    return count;
+    return recipeBook.getRecipes().stream()
+            .mapToInt(recipe -> recipe.getServings()) // Assuming you have a getServings() method
+            .sum();
   }
 }
