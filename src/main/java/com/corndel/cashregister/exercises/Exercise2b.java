@@ -1,6 +1,8 @@
 package com.corndel.cashregister.exercises;
 
 import com.corndel.cashregister.exercises.models.Recipe;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exercise2b {
@@ -9,7 +11,14 @@ public class Exercise2b {
    * name of each recipe
    */
   public static List<String> listNames(List<Recipe> recipes) {
-    // TODO
-    return null;
+    ArrayList<String> result = new ArrayList<>();
+
+    for (int i = 0; i < recipes.size(); i++) {
+      Recipe recipe = recipes.get(i);
+      result.add(recipe.getName());
+
+
+    }
+    return result;
   }
 }
