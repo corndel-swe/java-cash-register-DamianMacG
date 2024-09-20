@@ -32,18 +32,11 @@ public class Level5 {
 
       // Step 1: Add paid items to the drawer
       for (Item item : paid) {
-        boolean found = false;
+
         for (Item drawerItem : drawer) {
           if (drawerItem.name.equals(item.name)) {
             drawerItem.quantity += item.quantity;
-            found = true;
-            break;
           }
-        }
-
-        // Adds bills or coins that may not be in the till already so therefore would not be in the drawer list
-        if (!found) {
-          drawer.add(new Item(item.name, item.value, item.quantity));
         }
       }
 
