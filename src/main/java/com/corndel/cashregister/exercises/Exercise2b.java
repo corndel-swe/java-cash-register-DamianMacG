@@ -4,6 +4,7 @@ import com.corndel.cashregister.exercises.models.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Exercise2b {
   /**
@@ -11,14 +12,8 @@ public class Exercise2b {
    * name of each recipe
    */
   public static List<String> listNames(List<Recipe> recipes) {
-    ArrayList<String> result = new ArrayList<>();
-
-    for (int i = 0; i < recipes.size(); i++) {
-      Recipe recipe = recipes.get(i);
-      result.add(recipe.getName());
-
-
-    }
-    return result;
+    return recipes.stream()
+            .map(Recipe::getName)
+            .toList();
   }
 }
