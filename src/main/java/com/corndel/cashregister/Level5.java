@@ -26,9 +26,38 @@ public class Level5 {
    * If you want to re-use some functions from other levels, you can do, e.g.
    * Level1.addItem(...) and so on.
    */
-  public static List<Item> transaction(int cost, List<Item> paid, List<Item> drawer) {
-    // TODO
-    return null;
+
+    public static List<Item> transaction(int cost, List<Item> paid, List<Item> drawer) {
+
+
+      // Step 1: Add paid items to the drawer
+      for (Item item : paid) {
+
+        for (Item drawerItem : drawer) {
+          if (drawerItem.name.equals(item.name)) {
+            drawerItem.quantity += item.quantity;
+          }
+        }
+      }
+
+
+      // Step 2: Calculate total paid and change owed using Level 3 method
+      int totalPaid = Level3.sumDrawer(paid);
+
+      // Calculate the change owed
+      int changeOwed = totalPaid - cost;
+
+
+      // Step 3: Remove change from the drawer
+        for (Item drawerItem : drawer) {
+          int maxUsable = Math.min(changeOwed / drawerItem.value, drawerItem.quantity);
+          changeOwed -= maxUsable * drawerItem.value;
+          drawerItem.quantity -= maxUsable;
+
+          if (changeOwed == 0) break; // Stop if we've given exact change
+        }
+
+      return drawer;
+    }
   }
 
-}

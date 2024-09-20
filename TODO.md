@@ -9,17 +9,17 @@
 
 ### Level 1
 
-- [ ] Complete the `removeItem` function which removes a single item from the
+- [x] Complete the `removeItem` function which removes a single item from the
       drawer.
 
-- [ ] Complete the `addItem` function which adds a single item to the drawer.
+- [x] Complete the `addItem` function which adds a single item to the drawer.
 
 ### Level 2
 
-- [ ] Complete the `countCoins` function which counts how many coins are in the
+- [x] Complete the `countCoins` function which counts how many coins are in the
       drawer.
 
-- [ ] Complete the `countNotes` function which counts how many notes are in the
+- [x] Complete the `countNotes` function which counts how many notes are in the
       drawer.
 
 ### Level 3

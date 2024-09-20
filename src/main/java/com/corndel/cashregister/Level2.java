@@ -14,15 +14,29 @@ public class Level2 {
    * N.b. $1 is a note, not a coin
    */
   public static int countCoins(List<Item> drawer) {
-    // TODO
-    return 0;
+    int count = 0;
+    for (Item item : drawer) {
+      if (item.name.equals("quarter") || item.name.equals("dime") ||
+              item.name.equals("nickel") || item.name.equals("penny")) {
+        count += item.quantity;
+      }
+    }
+
+    return count;
   }
 
   /**
-   * Same as count coins but for *notes* instead
+   * Counts the total number of notes in the drawer.
    */
   public static int countNotes(List<Item> drawer) {
-    // TODO
-    return 0;
-  }
-}
+    int count = 0;
+    for (Item item : drawer) {
+      if (item.name.equals("hundred") || item.name.equals("twenty") ||
+              item.name.equals("ten") || item.name.equals("five") ||
+              item.name.equals("one")) {
+        count += item.quantity;
+      }
+    }
+
+    return count;
+}}
