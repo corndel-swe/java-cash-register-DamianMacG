@@ -16,7 +16,7 @@ public class Exercise3a {
     if (recipeBook.getRecipes().isEmpty()) {
       return null;
     }
-    List<Recipe> recipes = recipeBook.getRecipes();
-    return recipes.getLast();
+
+    return recipeBook.getRecipes().getLast();
   }
 }
